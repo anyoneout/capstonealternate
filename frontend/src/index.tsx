@@ -22,7 +22,7 @@ const bodyTag = document.getElementById("bodyTag");
 const root = createRoot(bodyTag);
 const domain = window.location.hostname;
 let rootPath = "";
-if (domain === "anyoneout.github.io") rootPath = "/Capstone-Level-4";
+if (domain === "anyoneout.github.io") rootPath = "/capstonealternate";
 root.render(
   <BrowserRouter>
     <CollapsibleNavbar />
