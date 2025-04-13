@@ -13,6 +13,10 @@ import "./index.scss";
 import { Server } from "./Views/Server";
 import { TriviaApiResponsePage } from "./Views/TriviaApiResponsePage";
 import { DynamoAuthPage } from "./Views/DynamoAuthPage";
+import { ReadUserForm } from "./modules/crud/ReadUserForm";
+import { UpdateUserForm } from "./modules/crud/UpdateUserForm";
+import { CreateUserForm } from "./modules/crud/CreateUserForm";
+import { DeleteUserForm } from "./modules/crud/DeleteUserForm";
 
 const bodyTag = document.getElementById("bodyTag");
 const root = createRoot(bodyTag);
@@ -33,6 +37,10 @@ root.render(
         <Route path={`${rootPath}/server`} element={<Server />} />
         <Route path={`${rootPath}/trivia`} element={<TriviaApiResponsePage />} />
         <Route path={`${rootPath}/dynamo`} element={<DynamoAuthPage />} />
+        <Route path={`${rootPath}/readUser`} element={<ReadUserForm />} />
+        <Route path={`${rootPath}/updateUser`} element={<UpdateUserForm />} />
+        <Route path={`${rootPath}/createUser`} element={<CreateUserForm />} />
+        <Route path={`${rootPath}/deleteUser`} element={<DeleteUserForm />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </HandleRefresh>
