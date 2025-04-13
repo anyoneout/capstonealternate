@@ -13,10 +13,11 @@ import "./index.scss";
 import { Server } from "./Views/Server";
 import { TriviaApiResponsePage } from "./Views/TriviaApiResponsePage";
 import { DynamoAuthPage } from "./Views/DynamoAuthPage";
-import { ReadUserForm } from "./modules/crud/ReadUserForm";
-import { UpdateUserForm } from "./modules/crud/UpdateUserForm";
-import { CreateUserForm } from "./modules/crud/CreateUserForm";
-import { DeleteUserForm } from "./modules/crud/DeleteUserForm";
+import { ReadUserForm } from "./Views/components/crud/ReadUserForm";
+import { UpdateUserForm } from "./Views/components/crud/UpdateUserForm";
+import { CreateUserForm } from "./Views/components/crud/CreateUserForm";
+import { DeleteUserForm } from "./Views/components/crud/DeleteUserForm";
+import AwsForm from "./Views/components/crud/AWSForm";
 
 const bodyTag = document.getElementById("bodyTag");
 const root = createRoot(bodyTag);
@@ -41,6 +42,7 @@ root.render(
         <Route path={`${rootPath}/updateUser`} element={<UpdateUserForm />} />
         <Route path={`${rootPath}/createUser`} element={<CreateUserForm />} />
         <Route path={`${rootPath}/deleteUser`} element={<DeleteUserForm />} />
+        <Route path={`${rootPath}/aws`} element={<AwsForm />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </HandleRefresh>

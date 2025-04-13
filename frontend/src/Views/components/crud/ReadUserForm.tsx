@@ -27,7 +27,7 @@ export function ReadUserForm() {
   }
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form className="form-control api-inputs input-group mb-2" data-bs-theme="dark" onSubmit={handleSubmit}>
         <h2>Show User</h2>
         <label>Email</label>
         <input value={email} onChange={(e) => setEmail(e.target.value)} />
