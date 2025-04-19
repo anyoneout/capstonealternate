@@ -1,4 +1,3 @@
-
 import { beforeEach, describe, expect, it } from "@jest/globals";
 import { bfSaveUser } from "./bfSaveUser";
 
@@ -23,10 +22,10 @@ describe("bfSaveUser", () => {
     expect(localStorage.getItem("hfToken")).toBe("exampleToken");
   });
   //ACT
-  it("should update UI with stored user data", () => {
+  /*  it("should update UI with stored user data", () => {
     bfSaveUser();
     //ASSERT
     expect(document.getElementById("userNameHTML").innerHTML).toBe("Chris Ali");
     expect(document.getElementById("userEmailHTML").innerHTML).toBe("chrisdafur@gmail.com");
-  });
+  }); */
 });

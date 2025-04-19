@@ -1,26 +1,26 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { deleteAccount } from "../modules/crud/deleteAccount";
 
 export function DeleteUserForm() {
   const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
   const [responseMessage, setResponseMessage] = useState<string>("");
-  const [showUsers, setShowUsers] = useState<boolean>(false);
+
   const baseUrl = process.env.REACT_APP_API_URL;
 
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
-    const url = `${baseUrl}/deleteUser?email=${email}`;
 
-    const response = await axios.get(url);
+    const response = await deleteAccount({ email, password, name: "", phone: "" });
 
-    const statusCode = response.status;
-    const isSuccessful = statusCode === 200;
+    if (response.status === 401) {
+      return setResponseMessage(`Invalid password entered`);
+    }
 
-    if (isSuccessful) {
-      setShowUsers(true);
+    if (response.status === 200) {
       setResponseMessage(`user (${email}) deleted successfully`);
     } else {
-      setShowUsers(false);
       setResponseMessage("user wasn't deleted");
     }
   }
@@ -30,6 +30,8 @@ export function DeleteUserForm() {
         <h2>Delete User</h2>
         <label>Email</label>
         <input value={email} onChange={(e) => setEmail(e.target.value)} />
+        <label>Password</label>
+        <input value={password} onChange={(e) => setPassword(e.target.value)} />
         <br></br>
         <button type="submit">Delete</button>
         <p>{responseMessage}</p>

@@ -17,11 +17,7 @@ function getInputValues(): { name: string; email: string; hfToken: string } {
   };
 }
 
-function saveToLocalStorage(
-  name: string,
-  email: string,
-  hfToken: string
-): void {
+function saveToLocalStorage(name: string, email: string, hfToken: string): void {
   localStorage.setItem("userName", name);
   localStorage.setItem("userEmail", email);
   localStorage.setItem("hfToken", hfToken);
@@ -71,5 +67,4 @@ export function UserInfo() {
   userNameHandle.innerHTML = userName;
   userEmailHandle.innerHTML = userEmail;
 }
-
  */

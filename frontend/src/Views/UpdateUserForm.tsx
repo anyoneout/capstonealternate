@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { updateAccount } from "../modules/crud/updateAccount";
 
 export function UpdateUserForm() {
   const [email, setEmail] = useState<string>("");
@@ -11,12 +12,9 @@ export function UpdateUserForm() {
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
 
-    const response = await axios.get(`${baseUrl}/updateUser?email=${email}&password=${password}`);
+    const response = await updateAccount({ email, password, name: "", phone: "" });
 
-    const statusCode = response.status;
-    const isSuccessful = statusCode === 200;
-
-    if (isSuccessful) {
+    if (response.status === 200) {
       setResponseMessage(`user (${email}) updated successfully`);
     } else {
       setResponseMessage("user wasn't updated");
