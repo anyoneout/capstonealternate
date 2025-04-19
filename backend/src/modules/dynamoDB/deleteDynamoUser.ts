@@ -1,7 +1,7 @@
 import { getDynamoNiceClient } from "./getDynamoNiceClient";
 
 //DynamoDB user authentication with AWS credentials
-export async function deleteDynamoUser(email: string): Promise<any> {
+export async function deleteDynamoUser(email: string, password: string): Promise<any> {
   if (typeof email === "object") return undefined;
   if (!email) return undefined;
 
