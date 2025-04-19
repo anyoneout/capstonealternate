@@ -13,11 +13,11 @@ import "./index.scss";
 import { Server } from "./Views/Server";
 import { TriviaApiResponsePage } from "./Views/TriviaApiResponsePage";
 import { DynamoAuthPage } from "./Views/DynamoAuthPage";
-import { ReadUserForm } from "./Views/components/crud/ReadUserForm";
-import { UpdateUserForm } from "./Views/components/crud/UpdateUserForm";
-import { CreateUserForm } from "./Views/components/crud/CreateUserForm";
-import { DeleteUserForm } from "./Views/components/crud/DeleteUserForm";
-import AwsForm from "./Views/components/crud/AWSForm";
+import { ReadUserForm } from "./Views/ReadUserForm";
+import { UpdateUserForm } from "./Views/UpdateUserForm";
+import { CreateUserForm } from "./Views/CreateUserForm";
+import { DeleteUserForm } from "./Views/DeleteUserForm";
+import AwsForm from "./Views/AwsForm";
 
 const bodyTag = document.getElementById("bodyTag");
 const root = createRoot(bodyTag);
